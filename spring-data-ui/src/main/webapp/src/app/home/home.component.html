@@ -1,13 +1,45 @@
-<h2>List of employees</h2>
-<ul *ngIf="employees">
-	<li *ngFor="let employee of employees">
-	 <div class="form-group row">
-     <div class="col-md-6">
-       {{employee.firstname}} {{employee.lastname}}
-     </div>
-     <div class="col-md-6">
-       <button type="button" class="btn btn-success">Increase salary</button>
-     </div>
-   </div>
-	</li>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>List of employees</title>
+</head>
+<body>
+
+
+<div class="modal-body">
+  <div class="container">
+
+    <div class="title">
+      <h2 class="center">List of employees</h2>
+    </div>
+    <table class="table table-striped">
+      <thead>
+      <tr class="row">
+        <th class="col-md-2">#</th>
+        <th class="col-md-3">Firstname</th>
+        <th class="col-md-3">Lastname</th>
+        <th class="col-md-2">Salary</th>
+        <th class="col-md-2"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <div *ngFor="let employee of employees">
+        <tr class="row">
+          <td class="col-md-2 font-weight-bold">{{employee.employeeId}}</td>
+          <td class="col-md-3">{{employee.firstname}}</td>
+          <td class="col-md-3">{{employee.lastname}}</td>
+          <td class="col-md-2">{{employee.salary}}</td>
+          <td class="col-md-2"></td>
+        </tr>
+      </div>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+</body>
+</html>

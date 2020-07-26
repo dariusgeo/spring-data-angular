@@ -1,6 +1,5 @@
 package edu.link.jpa.model;
 
-import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -15,7 +14,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@Data
 @Entity
 @Table(name="job_history")
 public class JobHistory implements Serializable{
@@ -39,4 +37,35 @@ public class JobHistory implements Serializable{
     @JoinColumn(name="department_id")
 	private Department department;
 
+	public JobHistoryPK getJobHistoryID() {
+		return jobHistoryID;
+	}
+
+	public void setJobHistoryID(JobHistoryPK jobHistoryID) {
+		this.jobHistoryID = jobHistoryID;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+	public Job getJob() {
+		return job;
+	}
+
+	public void setJob(Job job) {
+		this.job = job;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
 }

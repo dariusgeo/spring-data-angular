@@ -1,6 +1,5 @@
 package edu.link.jpa.model;
 
-import lombok.Data;
 
 import java.io.Serializable;
 
@@ -15,7 +14,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-@Data
 @Entity
 @Table(name="countries")
 public class Country implements Serializable{
@@ -38,5 +36,28 @@ public class Country implements Serializable{
     @JoinColumn(name = "region_id")
 	private Region region;
 
+	public String getCountryId() {
+		return countryId;
+	}
+
+	public void setCountryId(String countryId) {
+		this.countryId = countryId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Region getRegion() {
+		return region;
+	}
+
+	public void setRegion(Region region) {
+		this.region = region;
+	}
 }
 

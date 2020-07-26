@@ -24,7 +24,7 @@ public class CountryServiceIT {
 	public void readAllCountries() {
 		List<Country> countryList = underTest.readAllCountries();
 
-		countryList.stream().forEach(emp -> System.out.println(emp.getName()));
+		countryList.stream().forEach(country -> System.out.println(country.getName()));
 
 		assertFalse(countryList.isEmpty());
 	}
